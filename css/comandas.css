@@ -1,0 +1,22 @@
+/*--------------------------------------------------
+comandas.css
+Reglas de estilo generales para toda la aplicación
+--------------------------------------------------
+*/
+body 
+{ 
+    background: url(../img/) center fixed no-repeat;
+    /*background-color: rgb(182,162,138);
+    background-color: rgb(109,48,44);*/
+    background-color: rgb(218, 16, 16);
+}
+
+.form-control
+{
+	background: rgb(255, 255, 255);
+}
+a 
+{ 
+	color: white; 
+} 
+
