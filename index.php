@@ -48,7 +48,7 @@ require("php/conexion.php");
 				<img class="mb-4" src="img/casa del taco logo blanco.png" alt="" width="200" height="200">
 
 				<!-- Encabezado  -->
-				<h1 class="text-white">Inicio de Sesión</h1>
+				<h1 class="text-white">Inicio de Sesión prueba git</h1>
 				<br>
 				<div class="form-floating">
 					<input type="text" class="form-control" name="codigo"> <label for="floatingInput">Nombre de usuario</label>
