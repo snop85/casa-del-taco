@@ -96,6 +96,8 @@
               <?php  
                   // Obtiene los Productos de Cocina a Preparar
                   $registros = fnGetProductosDeCocina($conexion,$codigo);
+
+                  
                
                   // Ciclo para procesar cada registro de Clase
                   while ($fila = $registros->fetch_assoc()) 

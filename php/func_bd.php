@@ -142,32 +142,16 @@ function fnGetServicioCobrar($conexion,$usuario,$servicio)
 function fnGetProductosDeCocina($conexion)
 {
     // Preparamos el Query de Consulta 
-	$query = "SELECT comandas.servicio,
-	                 comandas.numero,
-	                 comandas.producto,
-					 comandas.comentario,
-					 comentarios.descripcion,
-                     productos.nombre,
-                     comandas.cantidad
-
+	$query = "SELECT *
               FROM   comandas,
-			         comentarios, 
-                     productos,
-		             servicios,
-		             clases       
-       
+                     productos
               WHERE  comandas.producto = productos.codigo
-              AND    comandas.servicio = servicios.numero
-              AND    comandas.fecha    = servicios.fecha
-			  AND    comentarios.descripcion = comandas.comentario
-              AND    productos.clase   = clases.nombre
-              AND    clases.tipo       = 'cocina'
-              AND    comandas.estado   = 'P'
-              AND    DATE(comandas.fecha) = DATE(now())"; 
+              AND    comandas.estado   = 'P'"; 
 
 	
 	// Ejecuta Query y obtiene Registros
 	$registros = $conexion->query($query);
+	
 
 	if (!$registros)
 	{    
@@ -175,6 +159,7 @@ function fnGetProductosDeCocina($conexion)
 	}   
 
 	// Devuelve los registros
+	
 	return $registros;	
 }
 
@@ -218,29 +203,15 @@ function fnGetProductosDeBarra($conexion)
 function fnGetProductosAEntregar($conexion,$usuario)
 {
     // Preparamos el Query de Consulta 
-	$query = "SELECT comandas.servicio,
-	                 comandas.numero,
-	                 servicios.mesa,
-					 servicios.mesero, 
-	                 comandas.producto,
-					 comandas.comentario,
-					 comentarios.descripcion,
-                     productos.nombre,
-                     comandas.cantidad
-
+	$query = "SELECT *
               FROM   comandas,
-			         comentarios, 
-                     productos,
-		             servicios       
-       
+                     productos,servicios, mesas
               WHERE  comandas.producto = productos.codigo
-              AND    comandas.servicio = servicios.numero
-              AND    comandas.fecha    = servicios.fecha
-			  AND    comentarios.descripcion = comandas.comentario
-              AND    comandas.estado   = 'E'
-              AND    DATE(comandas.fecha) = CURDATE()
-              AND    servicios.mesero ='$usuario'"; 
+			  AND  servicios.numero = mesas.numero
+              AND    comandas.estado   = 'E'"; 
+			  
 
+			  
 	
 	// Ejecuta Query y obtiene Registros
 	$registros = $conexion->query($query);
