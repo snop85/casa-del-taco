@@ -203,12 +203,29 @@ function fnGetProductosDeBarra($conexion)
 function fnGetProductosAEntregar($conexion,$usuario)
 {
     // Preparamos el Query de Consulta 
-	$query = "SELECT *
-              FROM   comandas,
-                     productos,servicios, mesas
-              WHERE  comandas.producto = productos.codigo
-			  AND  servicios.numero = mesas.numero
-              AND    comandas.estado   = 'E'"; 
+	$query = "SELECT comandas.servicio,
+	comandas.numero,
+	servicios.mesa, 
+	comandas.producto,
+	productos.nombre,
+	comandas.cantidad,
+	comandas.comentario,
+	comentarios.descripcion
+
+
+FROM   comandas, 
+	productos,
+	servicios,
+	comentarios   
+
+
+WHERE  comandas.producto = productos.codigo
+AND    comandas.servicio = servicios.numero
+AND    comandas.fecha    = servicios.fecha
+AND    comandas.comentario = comentarios.descripcion
+AND    comandas.estado   = 'E'
+AND    servicios.mesero = $usuario"; 
+
 			  
 
 			  

@@ -253,8 +253,10 @@
   <div class="container">
   <div class="alert alert-success" role="alert">
     <strong>Tomar el pedido</strong>
-    Selecciona los productos.
+    Selecciona los productos. 
+    
 </div>
+
     <form name ="form1" action='php/comandaAgregar.php' id="form1"
           class='was-validated' method='POST' onsubmit="fnValida(event)">
         
