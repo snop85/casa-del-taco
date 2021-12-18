@@ -24,8 +24,7 @@ if (isset($_POST['servicio']) &&
 	// Prepara el Query para actualizar el Servicio
 	$query  = " UPDATE servicios";
     $query .= " SET    total       = $total";
-    $query .= " WHERE  DATE(fecha) = CURDATE()";
-    $query .= " AND    numero      = $servicio";
+    $query .= " WHERE  servicios.numero = $servicio";
 
     // Ejecuta el Query
 	$Registros = $conexion->query($query);
@@ -39,7 +38,7 @@ if (isset($_POST['servicio']) &&
         // Variables para el Error
 	    $titulo      = "Error al Actualizar Total del Servicio";
 	    $descripcion = "[".$query."]".$conexion->error;
-	    $enlace      = "atencion.php";
+	    $enlace      = "caja.php";
         
 	    // Presenta ventana de Error
 		header("Location: ../error.php?titulo=$titulo&descripcion=$descripcion&enlace=$enlace");
@@ -63,7 +62,7 @@ if (isset($_POST['servicio']) &&
         	// Variables para el Error
 	    	$titulo      = "Error al Actualizar Status de Mesa";
 	    	$descripcion = "[".$query."]".$conexion->error;
-	    	$enlace      = "atencion.php";
+	    	$enlace      = "caja.php";
         
 	    	// Presenta ventana de Error
 			header("Location: ../error.php?titulo=$titulo&descripcion=$descripcion&enlace=$enlace");            
@@ -79,7 +78,7 @@ if (isset($_POST['servicio']) &&
 			    // Variables para el Error
 	            $titulo      = "Error al Confirmar Transacción";
 	            $descripcion = "[".$query."]".$conexion->error;
-	            $enlace      = "atencion.php";
+	            $enlace      = "caja.php";
 
 	            // Presenta ventana de Error
 		        header("Location: ../error.php?titulo=$titulo&descripcion=$descripcion&enlace=$enlace");
@@ -89,7 +88,7 @@ if (isset($_POST['servicio']) &&
 		    	// Variables para el exito
         		$titulo      = "Exito Cobro de Servicio";
         		$descripcion = "Se ha realizado con exito el Cobro del Servicio";
-        		$enlace      = "atencion.php";
+        		$enlace      = "caja.php";
 
         		// Lanzando Aplicación por Tipo
         		header("Location: ../exito.php?titulo=$titulo&descripcion=$descripcion&enlace=$enlace");
