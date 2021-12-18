@@ -85,7 +85,7 @@ if (
 
       <div class="form-group">
         <label for="idMesas">
-          <h1 class="text-white">Selecciona la mesa para cobrar:</h1>
+          <h1 class="text-white">Cuentas por cobrar:</h1>
         </label>
         <br> <br>
         <select class="form-select form-select-lg mb-3" id="idMesas" name="servicio-mesa" required aria-label=".form-select-lg example">

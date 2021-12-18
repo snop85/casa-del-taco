@@ -114,14 +114,8 @@ if (
           ?>
 
         </select>
-
-
-
       </div>
       <button type="submit" class="btn btn-success btn-lg" name="proceso" value="agregar">Agregar
-      </button>
-
-      <button type="submit" class="btn btn-warning btn-lg" name="proceso" value="cobrar" name="Cobrar">Cobrar
       </button>
     </form>
 
