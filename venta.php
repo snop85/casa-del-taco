@@ -1,4 +1,6 @@
 <?php
+
+
   // Inicia o Activa Sesion
   session_start();
   
@@ -122,7 +124,25 @@
 
   <div class="container">
 
-    <form class='was-validated'>
+
+  <div class="card text-white bg-dark mb-3">
+  <div class="card-header">Registro de ventas</div>
+  <div class="card-body">
+    <h5 class="card-title">Seleccione un rango de fechas</h5>
+    <div class="row">
+      
+
+
+    <form class="form-inline" method="POST" action="">
+   
+    <div class="col-md-4">  <input type="date" class="form-control" placeholder="Start"  name="date1"/></div>
+            <div class="col-md-4">  <input type="date" class="form-control" placeholder="End"  name="date2"/> </div>
+            <div class="col-md-4">  <button class="btn btn-primary pro-button w-100" name="search">Buscar<i class="fa fa-plane ml-2"></i></button> </div>
+      
+    </form>
+        </div>
+        <br>
+         <form class='was-validated'>
           <!-- Coloco datos ocultos-->                    
           <div class="form-group">
             <table class="table table-striped table-light">
@@ -150,7 +170,7 @@
                   {
                       // Coloca los datos en variables
                       $servicio   = $fila["numero"];
-                      $hora       = $fila["hora"];
+                      $fecha       = $fila["fecha"];
                       $mesa       = $fila["mesa"];
                       $mesero     = $fila['mesero'];
                       $comensales = $fila['comensales'];
@@ -170,7 +190,7 @@
                       //echo "</a>";
                       echo "</td>\n";
                       
-                      echo "<td>".substr($hora,0,5)."</td>\n";
+                      echo "<td>$fecha</td>\n";
                       echo "<td>$mesa</td>\n";
                       echo "<td>$mesero</td>\n";
                       echo "<td>$comensales</td>\n";
@@ -188,7 +208,8 @@
           ?>
         <button onclick="printHTML()" class="btn btn-success">Imprimir</button>        
       </form>
-    
+  </div>
+</div>
   </div>
 </body>
 </html>
