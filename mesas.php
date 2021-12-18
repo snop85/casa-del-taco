@@ -109,7 +109,7 @@
   <br>
 
   <div class="container">
-    <table class="table table-striped table-light">
+    <table class="table table-hover table-dark">
       <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="mesasABC.php?operacion=Alta">
             <h2 class="text-white">Nueva mesa</h2>
           </a>

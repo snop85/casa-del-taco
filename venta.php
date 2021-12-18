@@ -130,26 +130,19 @@
   <div class="card-body">
     <h5 class="card-title">Seleccione un rango de fechas</h5>
     <div class="row">
-      
-
-
-    <form class="form-inline" method="POST" action="">
-   
-    <div class="col-md-4">  <input type="date" class="form-control" placeholder="Start"  name="date1"/></div>
+            <div class="col-md-4">  <input type="date" class="form-control" placeholder="Start"  name="date1"/></div>
             <div class="col-md-4">  <input type="date" class="form-control" placeholder="End"  name="date2"/> </div>
-            <div class="col-md-4">  <button class="btn btn-primary pro-button w-100" name="search">Buscar<i class="fa fa-plane ml-2"></i></button> </div>
-      
-    </form>
+            <div class="col-md-4">  <button class="btn btn-primary pro-button w-100">Buscar<i class="fa fa-plane ml-2"></i></button> </div>
         </div>
         <br>
          <form class='was-validated'>
           <!-- Coloco datos ocultos-->                    
           <div class="form-group">
-            <table class="table table-striped table-light">
+            <table class="table table-hover table-dark">
               <thead class="thead-dark">
                 <tr>
                     <th>Servicio</th>
-                    <th>Hora</th>
+                    <th>Fecha</th>
                     <th>Mesa</th>
                     <th>Mesero</th>
                     <th>Personas</th>

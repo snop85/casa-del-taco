@@ -110,11 +110,11 @@
   <br>
 
   <div class="container">
-    <table class="table table-hover table-success">
+    <table class="table table-hover table-dark">
         <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="productosABC.php?operacion=Alta">
             <h2 class="text-white">Nuevo producto</h2>
           </a>
-      <thead class="thead-light">
+      <thead class="thead-dark">
         <tr>
           <th>Código</th>
           <th>Nombre</th>

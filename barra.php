@@ -73,7 +73,7 @@
     <form>
           <!-- Coloco datos ocultos-->                    
           <div class="form-group">
-            <table class="table table-striped table-light">
+            <table class="table table-hover table-dark">
               <thead class="thead-dark">
                 <tr>
                     <th>Codigo</th>

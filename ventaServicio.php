@@ -60,53 +60,65 @@
   </script>
 </head>
 <body>
-
   <nav class="navbar navbar-light">
-    <a class="navbar-brand" href="#">Comandas-Venta</a>
+    <a class="navbar-brand" href="#"> <img src="img/logo.png" alt="Logo" style="width:100px;"> </a>
+    <button type="button" class="btn btn-warning">
+      <?php
+      echo strtoupper($usuario);
+      ?>
+    </button>  
+    <button type="button" class="btn btn-outline-warning">
+         Registro de ventas 
+    </button>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="usuarios.php">
-            Usuarios 
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="index.php">
+            <h2 class="text-white">Inicio</h2>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="mesas.php">
-            Mesas
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="usuarios.php">
+            <h2 class="text-white">Usuarios</h2>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="clases.php">
-            Clases
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="mesas.php">
+            <h2 class="text-white">Mesas</h2>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="comentarios.php">
-            Comentarios
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="clases.php">
+            <h2 class="text-white">Clases</h2>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="productos.php">
-            Productos
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="comentarios.php">
+            <h2 class="text-white">Comentarios</h2>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="venta.php">
-            Venta
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="productos.php">
+            <h2 class="text-white">Productos</h2>
           </a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="php/salida.php">Salida</a>
-        </li>    
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="venta.php">
+            <h2 class="text-white">Ventas</h2>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="php/salida.php">
+            <h2 class="text-white">Salir</h2>
+          </a>
+        </li>
       </ul>
-    </div>  
+    </div>
   </nav>
   <br>
-
   <div class="container">
 
     
@@ -115,14 +127,15 @@
             <?php
               echo "<p class='bg-warning text-white'>&nbspServicio:$servicio</p>\n";
             ?>
-            <table class="table table-striped table-light">
+            <table class="table table-hover table-dark">
               <thead class="thead-dark">
                 <tr>
-                    <th>Coma</th>
                     <th>Hora</th>
-                    <th>Prod</th>
-                    <th>Cant</th>
-                    <th>Esta</th>
+                    <th>Producto</th>
+                    <th>Precio</th>                  
+                    <th>Cantidad</th>
+                    <th>Comentario</th>
+                    <th>Estado</th>
                 </tr>
               </thead>
               <tbody>
@@ -138,11 +151,11 @@
                   while ($fila = $registros->fetch_assoc()) 
                   {
                       // Coloca los datos en variables
-                      $comanda    = $fila["numero"];
                       $hora       = $fila["hora"];
                       $producto   = $fila["producto"];
                       $precio     = $fila["precio"];
                       $cantidad   = $fila['cantidad'];
+                      $comentario   = $fila['comentario'];
                       $estado     = $fila['estado'];
 
                       // Agrega a la suma
@@ -152,10 +165,12 @@
                       echo "<tr> \n";
                       
                       // Coloca los datos                      
-                      echo "<td>$comanda</td>\n";
+                     
                       echo "<td>".substr($hora,0,5)."</td>\n";
                       echo "<td>$producto</td>\n";
-                      echo "<td align=right>$cantidad</td>\n";
+                      echo "<td>$precio</td>\n";
+                      echo "<td>$cantidad</td>\n";
+                      echo "<td>$comentario</td>\n";
                       echo "<td>$estado</td>\n";
 
                       // Cierra el Renglón
@@ -173,18 +188,6 @@
     
   </div>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-  <a class="navbar-brand" href="#"> <img src="img/casa del taco logo blanco.png" alt="Logo" style="width:100px;"> </a>
-    <button type="button" class="btn btn-warning">
-          <?php 
-            echo strtoupper($usuario);      
-          ?>
-    </button>
-    <button type="button" class="btn btn-outline-warning">
-          <?php 
-            echo strtoupper($tipo);      
-          ?> 
-    </button>
-    </nav>
+
 </body>
 </html>

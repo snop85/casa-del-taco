@@ -106,7 +106,7 @@ if (
   <br>
 
   <div class="container">
-    <table class="table table-striped table-light">
+    <table class="table table-hover table-dark">
       <a type="button" class="btn btn-outline-danger btn-lg btn-block" href="comentariosABC.php?operacion=Alta">
         <h2 class="text-white">Nuevo comentario</h2>
       </a>
