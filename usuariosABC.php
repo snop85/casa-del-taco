@@ -221,7 +221,11 @@
             if ($tipoActualizar=="cocina")  
                echo "<option selected value=cocina>cocina</option>";
             else 
-               echo "<option value=cocina>cocina</option>";
+               echo "<option value=caja>caja</option>";
+            if ($tipoActualizar=="caja")   
+               echo "<option selected value=control>control</option>";
+            else 
+               echo "<option value=control>control</option>";   
             if ($tipoActualizar=="control")   
                echo "<option selected value=control>control</option>";
             else 
