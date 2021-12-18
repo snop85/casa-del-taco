@@ -93,7 +93,7 @@ function fnGetMesasUsuario($conexion,$usuario)
     $query .= " FROM   servicios, mesas";
     $query .= " WHERE  servicios.mesa = mesas.numero";
     $query .= " AND    servicios.mesero ='$usuario'";
-    $query .= " AND    DATE(servicios.fecha)=DATE(now())";
+   
     $query .= " AND    total IS NULL";
 
 	
@@ -122,8 +122,7 @@ function fnGetServicioCobrar($conexion,$usuario,$servicio)
               WHERE  servicios.numero = comandas.servicio
               AND    productos.codigo = comandas.producto
               AND    servicio = $servicio
-              AND    servicios.fecha = CURDATE()
-              AND    comandas.fecha = CURDATE()"; 
+              "; 
 
 	
 	// Ejecuta Query y obtiene Registros
