@@ -89,12 +89,16 @@ function fnGetComentariosPorClase($conexion,$clase)
 function fnGetMesasUsuario($conexion,$usuario)
 {
     // Preparamos el Query de Consulta 
-	$query =  " SELECT servicios.numero,servicios.mesa, mesas.nombre";
-    $query .= " FROM   servicios, mesas";
-    $query .= " WHERE  servicios.mesa = mesas.numero";
-    $query .= " AND    servicios.mesero ='$usuario'";
-   
-    $query .= " AND    total IS NULL";
+	$query =  " SELECT servicios.numero,
+	servicios.mesa,
+	servicios.total, 
+	mesas.nombre
+
+    FROM   servicios, 
+	       mesas
+    WHERE  servicios.total IS NULL
+	AND    servicios.mesa = mesas.numero
+    ";
 
 	
 	// Ejecuta Query y obtiene Registros
@@ -114,15 +118,16 @@ function fnGetServicioCobrar($conexion,$usuario,$servicio)
 {
     // Preparamos el Query de Consulta 
 	$query = "SELECT producto, 
-	                 productos.nombre,
-                     cantidad, 
-                     comandas.precio,
-		             comandas.precio * cantidad AS importe
-              FROM   servicios, comandas, productos
-              WHERE  servicios.numero = comandas.servicio
-              AND    productos.codigo = comandas.producto
-              AND    servicio = $servicio
-              "; 
+	productos.nombre,
+	cantidad, 
+	comandas.precio,
+	comandas.precio * cantidad AS importe
+FROM   servicios, comandas, productos
+WHERE  servicios.numero = comandas.servicio
+AND    productos.codigo = comandas.producto
+AND    servicio = $servicio"; 
+
+
 
 	
 	// Ejecuta Query y obtiene Registros
