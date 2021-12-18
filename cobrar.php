@@ -16,7 +16,7 @@
      $tipo     = $_SESSION['tipo'];             
 
      // Verifica que el tipo sea atencion
-     if ($tipo != "atencion")
+     if ($tipo != "caja")
      {
         // Variables para el error
         $titulo      = "Error Acceso";
